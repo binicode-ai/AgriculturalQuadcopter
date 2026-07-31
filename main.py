@@ -24,10 +24,20 @@ climb_speed = 1.05 * hover_speed
 omegas = np.full(4, climb_speed)
 """
 
-time, states = simulate(
+time, states, estimated = simulate(
     state0,
     omegas,
     method="rk4"
 )
+
+print("Time shape:", time.shape)
+print("States shape:", states.shape)
+
+print("\nInitial State:")
+print(states[0])
+
+print("\nFinal State:")
+print(states[-1])
+
 
 show_all(time, states)

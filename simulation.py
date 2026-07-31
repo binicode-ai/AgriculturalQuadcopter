@@ -11,8 +11,8 @@ Supports:
 import numpy as np
 
 import parameters as p
-from dynamics import euler_step, rk4_step
-
+from dynamics import rk4_step
+from dynamics import euler_step
 
 def simulate(initial_state, omegas, method="rk4"):
     """
@@ -80,3 +80,4 @@ def simulate(initial_state, omegas, method="rk4"):
             )
 
     return time, states
+

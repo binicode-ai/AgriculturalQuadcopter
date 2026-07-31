@@ -38,3 +38,39 @@ def control_inputs(omegas):
     U4 = yaw_torque(omegas)
 
     return np.array([U1, U2, U3, U4])
+
+
+
+def update_motor_speed(current_speed,
+                       commanded_speed):
+    """
+    First-order motor dynamics.
+
+    Parameters
+    ----------
+    current_speed : ndarray (4,)
+    commanded_speed : ndarray (4,)
+
+    Returns
+    -------
+    ndarray (4,)
+    """
+
+    omega_dot = (
+        commanded_speed
+        - current_speed
+    ) / p.motor_time_constant
+
+    current_speed = (
+        current_speed
+        + omega_dot * p.dt
+    )
+
+    current_speed = np.clip(
+        current_speed,
+        p.motor_min_speed,
+        p.motor_max_speed
+    )
+
+    return current_speed
+

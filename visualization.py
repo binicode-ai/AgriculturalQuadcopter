@@ -113,8 +113,9 @@ def plot_body_rates(time, states):
 # ==========================================================
 # Complete Dashboard
 # ==========================================================
-
-def show_all(time, states):
+def show_all(time,
+             states,
+             estimated):
 
     plot_position(time, states)
 
@@ -124,4 +125,41 @@ def show_all(time, states):
 
     plot_body_rates(time, states)
 
+    plot_estimation(
+        time,
+        states,
+        estimated
+    )
+
     plt.show()
+
+def plot_estimation(time,
+                    states,
+                    estimated):
+
+    plt.figure(figsize=(10,5))
+
+    plt.plot(
+        time,
+        np.degrees(states[:,3]),
+        label="True Roll"
+    )
+
+    plt.plot(
+        time,
+        np.degrees(estimated[:,0]),
+        "--",
+        label="Estimated Roll"
+    )
+
+    plt.title(
+        "Complementary Filter Performance"
+    )
+
+    plt.xlabel("Time (s)")
+    plt.ylabel("Roll (deg)")
+
+    plt.grid(True)
+    plt.legend()
+
+    plt.tight_layout()

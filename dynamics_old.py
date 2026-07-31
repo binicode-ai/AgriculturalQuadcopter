@@ -19,6 +19,7 @@ Future Versions
 
 import numpy as np
 
+from dynamics.aerodynamics import drag_force
 import parameters as p
 import motors
 
@@ -30,30 +31,57 @@ from kinematics import euler_rates
 # Translational Dynamics
 # ==========================================================
 
-def translational_acceleration(phi, theta, psi, omegas):
-    """
-    Compute linear acceleration in the Earth frame.
-    """
+def translational_acceleration(
+        phi,
+        theta,
+        psi,
+        vx,
+        vy,
+        vz,
+        omegas):
 
+    # Total thrust
     thrust = motors.total_thrust(omegas)
 
+    # Thrust in body frame
     thrust_body = np.array([
         0.0,
         0.0,
         thrust
     ])
 
+    # Rotation matrix
     R = rotation_matrix(phi, theta, psi)
 
+    # Convert thrust to Earth frame
     thrust_world = R @ thrust_body
 
+    # Gravity acceleration
     gravity = np.array([
         0.0,
         0.0,
         -p.g
     ])
 
-    acceleration = thrust_world / p.m + gravity
+    # Velocity vector
+    velocity = np.array([
+        vx,
+        vy,
+        vz
+    ])
+
+    # Aerodynamic drag
+    drag = drag_force(velocity)
+
+    # Total external force
+    force = (
+        thrust_world
+        + drag
+        + p.m * gravity
+    )
+
+    # Newton's Second Law
+    acceleration = force / p.m
 
     return acceleration
 
@@ -179,11 +207,14 @@ def state_derivative(state, omegas):
     # ---------------------------------------
 
     linear_acc = translational_acceleration(
-        phi,
-        theta,
-        psi,
-        omegas
-    )
+    phi,
+    theta,
+    psi,
+    vx,
+    vy,
+    vz,
+    omegas
+)
 
     # ---------------------------------------
     # Angular acceleration
