@@ -1,0 +1,15 @@
+========== MISSION REPORT ==========
+
+Duration          : 0.0 s
+Distance          : 245.6 m
+Plants inspected  : 8
+Plants sprayed    : 2
+Chemical used     : 0.120 L
+Tank remaining    : 92.5%
+
+Disease Statistics
+------------------
+Healthy     : 4
+Rust        : 2
+Blight      : 1
+LeafSpot    : 1
