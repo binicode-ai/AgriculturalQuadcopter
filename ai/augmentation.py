@@ -1,108 +1,236 @@
 """
 ai/augmentation.py
 
-Image augmentation for agricultural datasets.
-
-Author: Biniyam Samuel
+Image preprocessing and augmentation pipeline
+for the AgriculturalQuadcopter crop disease classifier.
 """
 
-import cv2
-import numpy as np
+from torchvision import transforms
 
 
-class ImageAugmentor:
+# ============================================================
+# Image configuration
+# ============================================================
 
-    def __init__(self):
-        pass
+IMAGE_SIZE = 224
 
-    # ------------------------------------------------
 
-    def rotate(self, image, angle):
+# ImageNet normalization.
+# This is appropriate for the pretrained CNN models
+# we will use later.
 
-        h, w = image.shape[:2]
+IMAGENET_MEAN = [
+    0.485,
+    0.456,
+    0.406,
+]
 
-        center = (w // 2, h // 2)
+IMAGENET_STD = [
+    0.229,
+    0.224,
+    0.225,
+]
 
-        matrix = cv2.getRotationMatrix2D(
-            center,
-            angle,
-            1.0
-        )
 
-        return cv2.warpAffine(
-            image,
-            matrix,
-            (w, h)
-        )
+# ============================================================
+# Training transforms
+# ============================================================
 
-    # ------------------------------------------------
+def get_train_transform():
 
-    def flip_horizontal(self, image):
+    transform = transforms.Compose([
 
-        return cv2.flip(image, 1)
+        # Resize the shortest side.
+        transforms.Resize(
+            (IMAGE_SIZE, IMAGE_SIZE)
+        ),
 
-    # ------------------------------------------------
+        # Randomly flip leaves horizontally.
+        transforms.RandomHorizontalFlip(
+            p=0.5
+        ),
 
-    def flip_vertical(self, image):
+        # Small rotations simulate
+        # different camera orientations.
+        transforms.RandomRotation(
+            degrees=15
+        ),
 
-        return cv2.flip(image, 0)
+        # Simulate natural lighting/color
+        # differences in agricultural images.
+        transforms.ColorJitter(
+            brightness=0.2,
+            contrast=0.2,
+            saturation=0.2,
+            hue=0.05
+        ),
 
-    # ------------------------------------------------
+        # Convert PIL image -> Tensor.
+        transforms.ToTensor(),
 
-    def adjust_brightness(
-        self,
-        image,
-        factor
-    ):
+        # Normalize using ImageNet statistics.
+        transforms.Normalize(
+            mean=IMAGENET_MEAN,
+            std=IMAGENET_STD
+        ),
+    ])
 
-        image = image.astype(np.float32)
+    return transform
 
-        image *= factor
 
-        image = np.clip(
-            image,
-            0,
-            255
-        )
+# ============================================================
+# Validation transforms
+# ============================================================
 
-        return image.astype(np.uint8)
+def get_validation_transform():
 
-    # ------------------------------------------------
+    transform = transforms.Compose([
 
-    def add_gaussian_noise(
-        self,
-        image,
-        sigma=10
-    ):
+        transforms.Resize(
+            (IMAGE_SIZE, IMAGE_SIZE)
+        ),
 
-        noise = np.random.normal(
-            0,
-            sigma,
-            image.shape
-        )
+        transforms.ToTensor(),
 
-        noisy = image.astype(np.float32)
+        transforms.Normalize(
+            mean=IMAGENET_MEAN,
+            std=IMAGENET_STD
+        ),
+    ])
 
-        noisy += noise
+    return transform
 
-        noisy = np.clip(
-            noisy,
-            0,
-            255
-        )
 
-        return noisy.astype(np.uint8)
+# ============================================================
+# Test transforms
+# ============================================================
 
-    # ------------------------------------------------
+def get_test_transform():
 
-    def blur(
-        self,
-        image,
-        kernel=5
-    ):
+    transform = transforms.Compose([
 
-        return cv2.GaussianBlur(
-            image,
-            (kernel, kernel),
-            0
-        )
+        transforms.Resize(
+            (IMAGE_SIZE, IMAGE_SIZE)
+        ),
+
+        transforms.ToTensor(),
+
+        transforms.Normalize(
+            mean=IMAGENET_MEAN,
+            std=IMAGENET_STD
+        ),
+    ])
+
+    return transform
+
+
+# ============================================================
+# Diagnostic
+# ============================================================
+
+def main():
+
+    print("=" * 60)
+    print("AgriculturalQuadcopter")
+    print("Image Transformation Pipeline")
+    print("=" * 60)
+
+    print()
+
+    print(
+        f"Image size: "
+        f"{IMAGE_SIZE} x {IMAGE_SIZE}"
+    )
+
+    print()
+
+    print("Training transformations:")
+    print(
+        "  - Resize"
+    )
+    print(
+        "  - Random horizontal flip"
+    )
+    print(
+        "  - Random rotation"
+    )
+    print(
+        "  - Color jitter"
+    )
+    print(
+        "  - ToTensor"
+    )
+    print(
+        "  - ImageNet normalization"
+    )
+
+    print()
+
+    print("Validation transformations:")
+    print(
+        "  - Resize"
+    )
+    print(
+        "  - ToTensor"
+    )
+    print(
+        "  - ImageNet normalization"
+    )
+
+    print()
+
+    print("Test transformations:")
+    print(
+        "  - Resize"
+    )
+    print(
+        "  - ToTensor"
+    )
+    print(
+        "  - ImageNet normalization"
+    )
+
+    print()
+
+    # Actually construct each pipeline.
+    train_transform = (
+        get_train_transform()
+    )
+
+    validation_transform = (
+        get_validation_transform()
+    )
+
+    test_transform = (
+        get_test_transform()
+    )
+
+    print(
+        "Training pipeline:"
+    )
+    print(train_transform)
+
+    print()
+
+    print(
+        "Validation pipeline:"
+    )
+    print(validation_transform)
+
+    print()
+
+    print(
+        "Test pipeline:"
+    )
+    print(test_transform)
+
+    print()
+
+    print("=" * 60)
+    print("Augmentation pipeline verification PASSED")
+    print("=" * 60)
+
+
+if __name__ == "__main__":
+
+    main()
