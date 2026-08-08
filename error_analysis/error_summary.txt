@@ -1,0 +1,79 @@
+AgriculturalQuadcopter
+Five-Class Error Inspection
+============================================================
+
+Total errors: 42
+
+CONFUSION PAIRS
+------------------------------------------------------------
+Blight       -> LeafSpot    : 19
+LeafSpot     -> Blight      : 11
+Blight       -> Healthy     : 5
+Healthy      -> Blight      : 2
+Healthy      -> LeafSpot    : 2
+Blight       -> Rust        : 1
+Mildew       -> Healthy     : 1
+Rust         -> Blight      : 1
+
+BLIGHT ↔ LEAFSPOT ERRORS
+------------------------------------------------------------
+01. Actual=LeafSpot | Predicted=Blight | Confidence=0.5238
+    datasets\crop_disease\test\LeafSpot\test_000370.jpg
+02. Actual=LeafSpot | Predicted=Blight | Confidence=0.5311
+    datasets\crop_disease\test\LeafSpot\test_000371.jpg
+03. Actual=LeafSpot | Predicted=Blight | Confidence=0.5589
+    datasets\crop_disease\test\LeafSpot\test_000080.jpg
+04. Actual=LeafSpot | Predicted=Blight | Confidence=0.5888
+    datasets\crop_disease\test\LeafSpot\test_000054.jpg
+05. Actual=Blight | Predicted=LeafSpot | Confidence=0.5920
+    datasets\crop_disease\test\Blight\test_000995.jpg
+06. Actual=Blight | Predicted=LeafSpot | Confidence=0.6224
+    datasets\crop_disease\test\Blight\test_000086.jpg
+07. Actual=Blight | Predicted=LeafSpot | Confidence=0.6448
+    datasets\crop_disease\test\Blight\test_001054.jpg
+08. Actual=Blight | Predicted=LeafSpot | Confidence=0.6492
+    datasets\crop_disease\test\Blight\test_000710.jpg
+09. Actual=Blight | Predicted=LeafSpot | Confidence=0.6523
+    datasets\crop_disease\test\Blight\test_000760.jpg
+10. Actual=Blight | Predicted=LeafSpot | Confidence=0.6586
+    datasets\crop_disease\test\Blight\test_000100.jpg
+11. Actual=LeafSpot | Predicted=Blight | Confidence=0.6629
+    datasets\crop_disease\test\LeafSpot\test_000350.jpg
+12. Actual=Blight | Predicted=LeafSpot | Confidence=0.6952
+    datasets\crop_disease\test\Blight\test_000136.jpg
+13. Actual=Blight | Predicted=LeafSpot | Confidence=0.7092
+    datasets\crop_disease\test\Blight\test_000993.jpg
+14. Actual=Blight | Predicted=LeafSpot | Confidence=0.7488
+    datasets\crop_disease\test\Blight\test_000778.jpg
+15. Actual=LeafSpot | Predicted=Blight | Confidence=0.7729
+    datasets\crop_disease\test\LeafSpot\test_000035.jpg
+16. Actual=Blight | Predicted=LeafSpot | Confidence=0.7855
+    datasets\crop_disease\test\Blight\test_000164.jpg
+17. Actual=Blight | Predicted=LeafSpot | Confidence=0.8007
+    datasets\crop_disease\test\Blight\test_000015.jpg
+18. Actual=Blight | Predicted=LeafSpot | Confidence=0.8046
+    datasets\crop_disease\test\Blight\test_000783.jpg
+19. Actual=Blight | Predicted=LeafSpot | Confidence=0.8455
+    datasets\crop_disease\test\Blight\test_000162.jpg
+20. Actual=Blight | Predicted=LeafSpot | Confidence=0.8664
+    datasets\crop_disease\test\Blight\test_000724.jpg
+21. Actual=Blight | Predicted=LeafSpot | Confidence=0.8872
+    datasets\crop_disease\test\Blight\test_000018.jpg
+22. Actual=Blight | Predicted=LeafSpot | Confidence=0.9124
+    datasets\crop_disease\test\Blight\test_000977.jpg
+23. Actual=LeafSpot | Predicted=Blight | Confidence=0.9138
+    datasets\crop_disease\test\LeafSpot\test_000101.jpg
+24. Actual=LeafSpot | Predicted=Blight | Confidence=0.9241
+    datasets\crop_disease\test\LeafSpot\test_000560.jpg
+25. Actual=Blight | Predicted=LeafSpot | Confidence=0.9254
+    datasets\crop_disease\test\Blight\test_000048.jpg
+26. Actual=LeafSpot | Predicted=Blight | Confidence=0.9332
+    datasets\crop_disease\test\LeafSpot\test_000344.jpg
+27. Actual=LeafSpot | Predicted=Blight | Confidence=0.9335
+    datasets\crop_disease\test\LeafSpot\test_000098.jpg
+28. Actual=LeafSpot | Predicted=Blight | Confidence=0.9756
+    datasets\crop_disease\test\LeafSpot\test_000076.jpg
+29. Actual=Blight | Predicted=LeafSpot | Confidence=0.9817
+    datasets\crop_disease\test\Blight\test_000665.jpg
+30. Actual=Blight | Predicted=LeafSpot | Confidence=0.9904
+    datasets\crop_disease\test\Blight\test_000099.jpg
