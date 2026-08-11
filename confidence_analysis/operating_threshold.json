@@ -1,0 +1,57 @@
+{
+    "operating_threshold": 0.65,
+    "target_accepted_accuracy": 0.995,
+    "accepted_accuracy": 0.9952871870397644,
+    "coverage": 0.9944346807264206,
+    "accepted_images": 3395,
+    "rejected_images": 19,
+    "selection_reason": "Selected the lowest practical threshold that achieves the required accepted accuracy while maximizing coverage.",
+    "classes": [
+        "Blight",
+        "Healthy",
+        "LeafSpot",
+        "Mildew",
+        "Rust"
+    ],
+    "model": "crop_disease_mobilenet_blspot_targeted.pth",
+    "validation_total": 3414,
+    "validation_accuracy": 0.9923842999414177,
+    "validation_average_confidence": 0.9904874068956034,
+    "per_class": {
+        "Blight": {
+            "images": 707,
+            "accuracy": 0.9745403111739745,
+            "average_confidence": 0.9755478616819692,
+            "average_wrong_confidence": 0.7140882975525327
+        },
+        "Healthy": {
+            "images": 1816,
+            "accuracy": 0.9994493392070485,
+            "average_confidence": 0.9983279643998797,
+            "average_wrong_confidence": 0.9266756176948547
+        },
+        "LeafSpot": {
+            "images": 403,
+            "accuracy": 0.9826302729528535,
+            "average_confidence": 0.9705160069406477,
+            "average_wrong_confidence": 0.7583300982202802
+        },
+        "Mildew": {
+            "images": 346,
+            "accuracy": 1.0,
+            "average_confidence": 0.9993277109427259,
+            "average_wrong_confidence": 0.0
+        },
+        "Rust": {
+            "images": 142,
+            "accuracy": 1.0,
+            "average_confidence": 0.9997376535140293,
+            "average_wrong_confidence": 0.0
+        }
+    },
+    "policy": {
+        "accepted": "confidence >= operating threshold",
+        "rejected": "confidence < operating threshold",
+        "rejected_action": "additional inspection"
+    }
+}

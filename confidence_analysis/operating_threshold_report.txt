@@ -1,0 +1,77 @@
+AgriculturalQuadcopter
+Operating Confidence Threshold Report
+======================================================================
+
+MODEL
+Model: C:\Users\Bini\Documents\AgriculturalQuadcopter\trained_models\crop_disease_mobilenet_blspot_targeted.pth
+
+CLASSES
+0 = Blight
+1 = Healthy
+2 = LeafSpot
+3 = Mildew
+4 = Rust
+
+VALIDATION PERFORMANCE
+Total images: 3414
+Correct: 3388
+Incorrect: 26
+Accuracy: 99.2384%
+Average confidence: 0.9905
+
+OPERATING POLICY
+Required accepted accuracy: 99.50%
+Selected threshold: 0.650
+Accepted accuracy: 99.5287%
+Coverage: 99.4435%
+Accepted images: 3395
+Rejected images: 19
+
+SELECTION REASON
+Selected the lowest practical threshold that achieves the required accepted accuracy while maximizing coverage.
+
+DEPLOYMENT RULE
+If confidence >= threshold:
+    ACCEPT prediction automatically
+If confidence < threshold:
+    SEND for additional inspection
+
+PER-CLASS CONFIDENCE
+----------------------------------------------------------------------
+Blight     Images:   707 Accuracy:   97.45% Avg Conf: 0.9755 Wrong Conf: 0.7141
+Healthy    Images:  1816 Accuracy:   99.94% Avg Conf: 0.9983 Wrong Conf: 0.9267
+LeafSpot   Images:   403 Accuracy:   98.26% Avg Conf: 0.9705 Wrong Conf: 0.7583
+Mildew     Images:   346 Accuracy:  100.00% Avg Conf: 0.9993 Wrong Conf: 0.0000
+Rust       Images:   142 Accuracy:  100.00% Avg Conf: 0.9997 Wrong Conf: 0.0000
+
+THRESHOLD TABLE
+----------------------------------------------------------------------
+Threshold | Accepted | Rejected | Coverage | Accuracy
+0.500 |     3413 |        1 |   99.97% |   99.27%
+0.550 |     3409 |        5 |   99.85% |   99.30%
+0.600 |     3400 |       14 |   99.59% |   99.44%
+0.650 |     3395 |       19 |   99.44% |   99.53%
+0.700 |     3383 |       31 |   99.09% |   99.56%
+0.750 |     3372 |       42 |   98.77% |   99.61%
+0.800 |     3367 |       47 |   98.62% |   99.64%
+0.850 |     3342 |       72 |   97.89% |   99.76%
+0.900 |     3315 |       99 |   97.10% |   99.82%
+0.920 |     3301 |      113 |   96.69% |   99.88%
+0.940 |     3276 |      138 |   95.96% |  100.00%
+0.950 |     3262 |      152 |   95.55% |  100.00%
+0.960 |     3244 |      170 |   95.02% |  100.00%
+0.970 |     3227 |      187 |   94.52% |  100.00%
+0.980 |     3192 |      222 |   93.50% |  100.00%
+0.985 |     3161 |      253 |   92.59% |  100.00%
+0.990 |     3117 |      297 |   91.30% |  100.00%
+
+CONFUSION PAIRS
+----------------------------------------------------------------------
+Blight       -> LeafSpot    :   14
+LeafSpot     -> Blight      :    7
+Blight       -> Healthy     :    4
+Healthy      -> Blight      :    1
+
+IMPORTANT
+The operating threshold was selected using validation data only.
+The untouched test set must be used later for final evaluation of this selected threshold.

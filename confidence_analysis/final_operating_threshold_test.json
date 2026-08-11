@@ -1,0 +1,33 @@
+{
+    "evaluation": "final_test",
+    "threshold_source": "validation_only",
+    "operating_threshold": 0.65,
+    "test_total": 5696,
+    "test_correct": 5654,
+    "test_incorrect": 42,
+    "test_accuracy": 0.992626404494382,
+    "average_confidence": 0.9914762133659188,
+    "accepted": 5656,
+    "rejected": 40,
+    "accepted_correct": 5630,
+    "accepted_incorrect": 26,
+    "rejected_correct": 24,
+    "rejected_incorrect": 16,
+    "accepted_accuracy": 0.9954031117397454,
+    "coverage": 0.9929775280898876,
+    "rejection_rate": 0.007022471910112359,
+    "confusion_pairs": {
+        "Blight -> LeafSpot": 19,
+        "LeafSpot -> Blight": 11,
+        "Blight -> Healthy": 5,
+        "Healthy -> Blight": 2,
+        "Healthy -> LeafSpot": 2,
+        "Blight -> Rust": 1,
+        "Mildew -> Healthy": 1,
+        "Rust -> Blight": 1
+    },
+    "policy": {
+        "accepted": "confidence >= threshold",
+        "additional_inspection": "confidence < threshold"
+    }
+}

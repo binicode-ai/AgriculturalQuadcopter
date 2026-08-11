@@ -1,0 +1,6 @@
+timestamp,image_path,predicted_class,class_index,confidence,decision,blight_probability,healthy_probability,leafspot_probability,mildew_probability,rust_probability
+2026-08-10T13:00:37+03:00,datasets/crop_disease/test/Blight/test_000086.jpg,LeafSpot,2,0.622383,NEEDS-REVIEW,0.376624,0.000920,0.622383,0.000029,0.000045
+2026-08-10T13:03:11+03:00,datasets/crop_disease/test/Blight/test_000086.jpg,LeafSpot,2,0.622383,NEEDS-REVIEW,0.376624,0.000920,0.622383,0.000029,0.000045
+2026-08-10T13:04:14+03:00,datasets/crop_disease/test/Healthy/test_000001.jpg,Healthy,1,0.999999,AUTO-ACCEPTED,0.000000,0.999999,0.000000,0.000000,0.000000
+2026-08-10T13:04:33+03:00,datasets/crop_disease/test/LeafSpot/test_000080.jpg,Blight,0,0.558930,NEEDS-REVIEW,0.558930,0.000568,0.440453,0.000013,0.000036
+2026-08-10T13:04:50+03:00,datasets/crop_disease/test/Mildew/test_000001.jpg,Mildew,3,0.998386,AUTO-ACCEPTED,0.001161,0.000404,0.000050,0.998386,0.000000

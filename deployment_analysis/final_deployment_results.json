@@ -1,0 +1,59 @@
+{
+    "total": 5696,
+    "correct": 5654,
+    "incorrect": 42,
+    "accuracy": 0.992626404494382,
+    "threshold": 0.65,
+    "accepted": 5656,
+    "rejected": 40,
+    "coverage": 0.9929775280898876,
+    "accepted_correct": 5630,
+    "accepted_incorrect": 26,
+    "accepted_accuracy": 0.9954031117397454,
+    "rejected_correct": 24,
+    "rejected_accuracy": 0.6,
+    "class_total": {
+        "0": 1179,
+        "1": 3029,
+        "2": 672,
+        "3": 577,
+        "4": 239
+    },
+    "class_correct": {
+        "0": 1154,
+        "1": 3025,
+        "2": 661,
+        "3": 576,
+        "4": 238
+    },
+    "class_accepted": {
+        "0": 1160,
+        "1": 3025,
+        "2": 656,
+        "3": 576,
+        "4": 239
+    },
+    "class_accepted_correct": {
+        "0": 1144,
+        "1": 3023,
+        "2": 649,
+        "3": 576,
+        "4": 238
+    },
+    "confusion": {
+        "Blight -> LeafSpot": 19,
+        "Blight -> Rust": 1,
+        "Blight -> Healthy": 5,
+        "Healthy -> Blight": 2,
+        "Healthy -> LeafSpot": 2,
+        "LeafSpot -> Blight": 11,
+        "Mildew -> Healthy": 1,
+        "Rust -> Blight": 1
+    },
+    "model": "crop_disease_mobilenet_blspot_targeted.pth",
+    "threshold_source": "C:\\Users\\Bini\\Documents\\AgriculturalQuadcopter\\confidence_analysis\\operating_threshold.json",
+    "policy": {
+        "accepted": "confidence >= threshold",
+        "review": "confidence < threshold"
+    }
+}

@@ -1,0 +1,196 @@
+AgriculturalQuadcopter
+Five-Class Confidence Threshold Analysis
+============================================================
+
+CLASSES
+0 = Blight
+1 = Healthy
+2 = LeafSpot
+3 = Mildew
+4 = Rust
+
+OVERALL PERFORMANCE
+------------------------------------------------------------
+Total: 5696
+Correct: 5654
+Incorrect: 42
+Accuracy: 0.992626
+Average confidence: 0.991476
+Average correct confidence: 0.993421
+Average incorrect confidence: 0.729737
+Minimum correct confidence: 0.484971
+Maximum incorrect confidence: 0.990413
+
+PER-CLASS CONFIDENCE
+------------------------------------------------------------
+
+Blight
+  Total: 1179
+  Correct: 1154
+  Incorrect: 25
+  Accuracy: 0.978796
+  Average confidence: 0.978942
+  Average incorrect confidence: 0.727486
+
+Healthy
+  Total: 3029
+  Correct: 3025
+  Incorrect: 4
+  Accuracy: 0.998679
+  Average confidence: 0.998166
+  Average incorrect confidence: 0.667185
+
+LeafSpot
+  Total: 672
+  Correct: 661
+  Incorrect: 11
+  Accuracy: 0.983631
+  Average confidence: 0.974988
+  Average incorrect confidence: 0.756235
+
+Mildew
+  Total: 577
+  Correct: 576
+  Incorrect: 1
+  Accuracy: 0.998267
+  Average confidence: 0.998462
+  Average incorrect confidence: 0.569505
+
+Rust
+  Total: 239
+  Correct: 238
+  Incorrect: 1
+  Accuracy: 0.995816
+  Average confidence: 0.998024
+  Average incorrect confidence: 0.904987
+
+THRESHOLD ANALYSIS
+------------------------------------------------------------
+
+Threshold: 0.50
+  Accepted: 5693
+  Rejected: 3
+  Coverage: 0.999473
+  Rejection rate: 0.000527
+  Accepted correct: 5653
+  Accepted incorrect: 40
+  Accepted accuracy: 0.992974
+
+Threshold: 0.55
+  Accepted: 5683
+  Rejected: 13
+  Coverage: 0.997718
+  Rejection rate: 0.002282
+  Accepted correct: 5647
+  Accepted incorrect: 36
+  Accepted accuracy: 0.993665
+
+Threshold: 0.60
+  Accepted: 5670
+  Rejected: 26
+  Coverage: 0.995435
+  Rejection rate: 0.004565
+  Accepted correct: 5641
+  Accepted incorrect: 29
+  Accepted accuracy: 0.994885
+
+Threshold: 0.65
+  Accepted: 5656
+  Rejected: 40
+  Coverage: 0.992978
+  Rejection rate: 0.007022
+  Accepted correct: 5630
+  Accepted incorrect: 26
+  Accepted accuracy: 0.995403
+
+Threshold: 0.70
+  Accepted: 5640
+  Rejected: 56
+  Coverage: 0.990169
+  Rejection rate: 0.009831
+  Accepted correct: 5618
+  Accepted incorrect: 22
+  Accepted accuracy: 0.996099
+
+Threshold: 0.75
+  Accepted: 5625
+  Rejected: 71
+  Coverage: 0.987535
+  Rejection rate: 0.012465
+  Accepted correct: 5605
+  Accepted incorrect: 20
+  Accepted accuracy: 0.996444
+
+Threshold: 0.80
+  Accepted: 5613
+  Rejected: 83
+  Coverage: 0.985428
+  Rejection rate: 0.014572
+  Accepted correct: 5596
+  Accepted incorrect: 17
+  Accepted accuracy: 0.996971
+
+Threshold: 0.85
+  Accepted: 5592
+  Rejected: 104
+  Coverage: 0.981742
+  Rejection rate: 0.018258
+  Accepted correct: 5578
+  Accepted incorrect: 14
+  Accepted accuracy: 0.997496
+
+Threshold: 0.90
+  Accepted: 5562
+  Rejected: 134
+  Coverage: 0.976475
+  Rejection rate: 0.023525
+  Accepted correct: 5552
+  Accepted incorrect: 10
+  Accepted accuracy: 0.998202
+
+Threshold: 0.95
+  Accepted: 5495
+  Rejected: 201
+  Coverage: 0.964712
+  Rejection rate: 0.035288
+  Accepted correct: 5492
+  Accepted incorrect: 3
+  Accepted accuracy: 0.999454
+
+Threshold: 0.97
+  Accepted: 5434
+  Rejected: 262
+  Coverage: 0.954003
+  Rejection rate: 0.045997
+  Accepted correct: 5431
+  Accepted incorrect: 3
+  Accepted accuracy: 0.999448
+
+Threshold: 0.98
+  Accepted: 5377
+  Rejected: 319
+  Coverage: 0.943996
+  Rejection rate: 0.056004
+  Accepted correct: 5375
+  Accepted incorrect: 2
+  Accepted accuracy: 0.999628
+
+Threshold: 0.99
+  Accepted: 5260
+  Rejected: 436
+  Coverage: 0.923455
+  Rejection rate: 0.076545
+  Accepted correct: 5259
+  Accepted incorrect: 1
+  Accepted accuracy: 0.999810
+
+CONFUSION PAIRS
+------------------------------------------------------------
+Blight -> LeafSpot: 19
+LeafSpot -> Blight: 11
+Blight -> Healthy: 5
+Healthy -> Blight: 2
+Healthy -> LeafSpot: 2
+Blight -> Rust: 1
+Mildew -> Healthy: 1
+Rust -> Blight: 1

@@ -1,0 +1,89 @@
+AgriculturalQuadcopter
+FINAL DEPLOYMENT EVALUATION
+======================================================================
+
+MODEL
+C:\Users\Bini\Documents\AgriculturalQuadcopter\trained_models\crop_disease_mobilenet_blspot_targeted.pth
+
+OPERATING THRESHOLD
+0.650
+
+FINAL TEST PERFORMANCE
+Total images: 5696
+Correct: 5654
+Incorrect: 42
+Accuracy: 99.26%
+
+DEPLOYMENT POLICY
+Accepted: 5656
+Review: 40
+Coverage: 99.30%
+Accepted accuracy: 99.54%
+
+CLASS RESULTS
+----------------------------------------------------------------------
+Blight       Images:  1179 Accuracy:   97.88% Accepted:  1160
+Healthy      Images:  3029 Accuracy:   99.87% Accepted:  3025
+LeafSpot     Images:   672 Accuracy:   98.36% Accepted:   656
+Mildew       Images:   577 Accuracy:   99.83% Accepted:   576
+Rust         Images:   239 Accuracy:   99.58% Accepted:   239
+
+CONFUSION PAIRS
+----------------------------------------------------------------------
+Blight -> LeafSpot               19
+Blight -> Rust                    1
+Blight -> Healthy                 5
+Healthy -> Blight                 2
+Healthy -> LeafSpot               2
+LeafSpot -> Blight               11
+Mildew -> Healthy                 1
+Rust -> Blight                    1
+
+REVIEW QUEUE
+----------------------------------------------------------------------
+Images requiring review: 40
+
+Blight     -> LeafSpot   |  62.24% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_000086.jpg
+Blight     -> Blight     |  60.00% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_000120.jpg
+Blight     -> Blight     |  58.69% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_000138.jpg
+Blight     -> Rust       |  44.89% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_000149.jpg
+Blight     -> Blight     |  58.58% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_000420.jpg
+Blight     -> Healthy    |  52.25% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_000556.jpg
+Blight     -> Healthy    |  55.21% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_000567.jpg
+Blight     -> Blight     |  62.12% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_000654.jpg
+Blight     -> Blight     |  61.54% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_000683.jpg
+Blight     -> LeafSpot   |  64.92% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_000710.jpg
+Blight     -> Blight     |  54.38% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_000827.jpg
+Blight     -> Blight     |  53.93% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_000829.jpg
+Blight     -> Blight     |  60.58% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_000834.jpg
+Blight     -> Blight     |  60.65% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_000979.jpg
+Blight     -> Blight     |  54.61% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_000981.jpg
+Blight     -> LeafSpot   |  59.20% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_000995.jpg
+Blight     -> LeafSpot   |  64.48% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_001054.jpg
+Blight     -> Healthy    |  56.99% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_001108.jpg
+Blight     -> Healthy    |  52.25% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Blight\test_001155.jpg
+Healthy    -> Healthy    |  55.58% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Healthy\test_000222.jpg
+Healthy    -> Blight     |  56.45% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Healthy\test_001520.jpg
+Healthy    -> LeafSpot   |  37.16% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Healthy\test_001983.jpg
+Healthy    -> Healthy    |  63.32% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Healthy\test_002675.jpg
+LeafSpot   -> LeafSpot   |  64.41% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\LeafSpot\test_000027.jpg
+LeafSpot   -> LeafSpot   |  48.50% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\LeafSpot\test_000030.jpg
+LeafSpot   -> LeafSpot   |  59.71% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\LeafSpot\test_000041.jpg
+LeafSpot   -> Blight     |  58.88% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\LeafSpot\test_000054.jpg
+LeafSpot   -> LeafSpot   |  56.20% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\LeafSpot\test_000063.jpg
+LeafSpot   -> LeafSpot   |  53.57% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\LeafSpot\test_000065.jpg
+LeafSpot   -> Blight     |  55.89% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\LeafSpot\test_000080.jpg
+LeafSpot   -> LeafSpot   |  56.55% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\LeafSpot\test_000082.jpg
+LeafSpot   -> LeafSpot   |  54.80% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\LeafSpot\test_000283.jpg
+LeafSpot   -> Blight     |  52.38% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\LeafSpot\test_000370.jpg
+LeafSpot   -> Blight     |  53.11% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\LeafSpot\test_000371.jpg
+LeafSpot   -> LeafSpot   |  64.49% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\LeafSpot\test_000377.jpg
+LeafSpot   -> LeafSpot   |  64.01% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\LeafSpot\test_000413.jpg
+LeafSpot   -> LeafSpot   |  62.32% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\LeafSpot\test_000453.jpg
+LeafSpot   -> LeafSpot   |  52.55% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\LeafSpot\test_000515.jpg
+LeafSpot   -> LeafSpot   |  63.95% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\LeafSpot\test_000536.jpg
+Mildew     -> Healthy    |  56.95% | C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test\Mildew\test_000023.jpg
+
+IMPORTANT
+The operating threshold was selected using validation data only.
+This evaluation uses the untouched test dataset exactly once for final deployment evaluation.

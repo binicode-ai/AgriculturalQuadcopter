@@ -1,0 +1,25 @@
+AgriculturalQuadcopter
+Batch Deployment Inference Summary
+======================================================================
+
+Input directory: C:\Users\Bini\Documents\AgriculturalQuadcopter\datasets\crop_disease\test
+Total images: 5696
+Successful predictions: 5696
+Errors: 0
+
+LOCKED OPERATING POLICY
+Confidence threshold: 0.650
+Confidence >= threshold -> ACCEPT
+Confidence < threshold -> NEEDS-REVIEW
+
+RESULTS
+Accepted automatically: 5656
+Sent for review: 40
+Automatic coverage: 99.30%
+
+INTERPRETATION
+High-confidence predictions are accepted automatically.
+Low-confidence predictions are sent for additional inspection.
+
+The classifier and operating threshold are locked.
+This batch inference module does not modify the trained model.

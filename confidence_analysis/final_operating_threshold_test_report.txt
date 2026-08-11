@@ -1,0 +1,45 @@
+AgriculturalQuadcopter
+FINAL OPERATING THRESHOLD TEST REPORT
+======================================================================
+
+IMPORTANT
+The operating threshold was selected using validation data only.
+The threshold was NOT tuned using the test set.
+
+Operating threshold: 0.650
+
+FINAL TEST PERFORMANCE
+Test images: 5696
+Correct: 5654
+Incorrect: 42
+Accuracy: 99.2626%
+
+OPERATING THRESHOLD PERFORMANCE
+Accepted: 5656
+Rejected: 40
+Accepted correct: 5630
+Accepted incorrect: 26
+Rejected correct: 24
+Rejected incorrect: 16
+Accepted accuracy: 99.5403%
+Coverage: 99.2978%
+Rejection rate: 0.7022%
+
+DEPLOYMENT RULE
+confidence >= 0.650 -> ACCEPT
+confidence < 0.650 -> ADDITIONAL INSPECTION
+
+CONFUSION PAIRS
+--------------------------------------------------
+Blight -> LeafSpot: 19
+LeafSpot -> Blight: 11
+Blight -> Healthy: 5
+Healthy -> Blight: 2
+Healthy -> LeafSpot: 2
+Blight -> Rust: 1
+Mildew -> Healthy: 1
+Rust -> Blight: 1
+
+CONCLUSION
+This is a final evaluation of the fixed operating threshold on the untouched test set.
+The threshold must not be changed based on this result.
